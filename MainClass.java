@@ -3,7 +3,7 @@ import java.util.*;
 
 public class MainClass {
     public static void main(String[] args) {
-        TicketBookingSystem ticketBookingSystem = new TicketBookingSystem();
+        FlightBookingSystem flightBookingSystem = new FlightBookingSystem();
 
         // Read flight details from folder and add to the ticket booking system
         File folder = new File("D:\\FLIGHT TICKET BOOKING\\FLIGHTS");
@@ -13,9 +13,6 @@ public class MainClass {
                 BufferedReader reader = new BufferedReader(new FileReader(file));
                 String flightNumber = file.getName().replaceFirst("[.][^.]+$", "");
 
-                
-                //String source = flightNumber.split("-")[1];
-                //String destination = flightNumber.split("-")[2];
 
                 int[] businessSeats = null;
                 int totalBusinessSeats = 0;
@@ -52,7 +49,7 @@ public class MainClass {
 
                 Flight flight = new Flight(flightNumber, businessSeats, economySeats, totalBusinessSeats,
                         totalEconomySeats);
-                ticketBookingSystem.addFlight(flight);
+                flightBookingSystem.addFlight(flight);
                 reader.close();
 
             } catch (IOException e) {
@@ -62,10 +59,12 @@ public class MainClass {
 
         // Test the functions
         System.out.println("List of flights:");
-        List<String> flightDetails = ticketBookingSystem.listFlightDetails();
+        List<String> flightDetails = flightBookingSystem.listFlightDetails();
         for (String flight : flightDetails) {
             System.out.println(flight);
         }
+
+        System.out.println();
 
         System.out.println("1. Book Tickets");
         System.out.println("2. Available Tickets");
@@ -75,58 +74,102 @@ public class MainClass {
         System.out.println("6. Full Summary");
         System.out.println("Enter The Option");
 
+ 
         Scanner scanner = new Scanner(System.in);
         int enterValue = scanner.nextInt();
 
-        while (enterValue < 7) {
+        switch (enterValue) {
+            case 1:
+                // Book seats for a flight
 
-            switch (enterValue) {
-                case 1:
-                    // Book seats for a flight
-
-                    System.out.println("Enter the source and destination");
-                    String source, destination = null;
-                    source = scanner.nextLine();
-                    destination = scanner.nextLine();
-                    System.out.println("\nFiltered flights from " + source + " to " + destination + ":");
-                    List<Flight> filteredFlights = ticketBookingSystem.searchFlights(source, destination);
-                    for (Flight flight : filteredFlights) {
-                        System.out.println(flight.getFlightNumber());
+                System.out.println("Enter the source and destination");
+                String source = null;
+                String destination = null;
+                source = scanner.next();
+                destination = scanner.next();
+                System.out.println("\nFlights from " + source + " to " + destination + ":");
+                System.out.println();
+                List<Flight> filteredFlights = flightBookingSystem.searchFlights(source, destination);
+                for (Flight flight : filteredFlights) {
+                    if(filteredFlights !=null)
+                    System.out.println(flight.getFlightNumber());
+                    else{
+                        System.out.println("No Flights Found!");
                     }
+                }
+                int fromIndex = 0;
+                int toIndex = 3;
+                List<Seat> seatsToBook = filteredFlights.get(0).getBusinessSeats().subList(fromIndex, toIndex);
+                boolean mealOption = true;
+                flightBookingSystem.bookSeats(filteredFlights.get(0).getFlightNumber(), seatsToBook, mealOption);
+                break;
 
-                    List<Seat> seatsToBook = filteredFlights.get(0).getBusinessSeats().subList(0, 3);
-                    boolean mealOption = true;
-                    ticketBookingSystem.bookSeats(filteredFlights.get(0).getFlightNumber(), seatsToBook, mealOption);
-                    break;
+            case 2:
+                // Print available seats for a flight
+                System.out.println("Enter the source and destination");
 
-                case 2:
-                    // Print available seats for a flight
-                    System.out.println("Enter the source and destination");
+                source = scanner.next();
+                destination = scanner.next();
+                List<Flight> filtered_Flights = flightBookingSystem.searchFlights(source, destination);
+                
+                flightBookingSystem.printAvailableSeats(filtered_Flights.get(0).getFlightNumber());
 
-                    source = scanner.nextLine();
-                    destination = scanner.nextLine();
-                    System.out.println("\nFiltered flights from " + source + " to " + destination + ":");
-                    List<Flight> filtered_Flights = ticketBookingSystem.searchFlights(source, destination);
-                    System.out.println("\nAvailable seats for " + filtered_Flights.get(0).getFlightNumber() + ":");
-                    ticketBookingSystem.printAvailableSeats(filtered_Flights.get(0).getFlightNumber());
+                
 
-                    break;
+                break;
 
-                case 3:
+            case 3:
 
-                    System.out.println("\nFlights with business class alone:");
-                    List<Flight> businessOnlyFlights = ticketBookingSystem.filterBusinessClassFlights();
+                System.out.println("\nFlights with business class alone:");
+                List<Flight> businessOnlyFlights = flightBookingSystem.filterBusinessClassFlights();
+                if (businessOnlyFlights == null) {
+                    System.out.println("Sorry! No business class tickets!");
+                } else {
                     for (Flight flight : businessOnlyFlights) {
                         System.out.println(flight.getFlightNumber());
                     }
-
-                    break;
-
-            }
+                }
+                break;
 
         }
         scanner.close();
-        
 
     }
 }
+
+/*
+ * String source = "Chennai";
+ * String destination = "Mumbai";
+ * System.out.println("\nFiltered flights from " + source + " to " + destination
+ * + ":");
+ * List<Flight> filteredFlights = ticketBookingSystem.searchFlights(source,
+ * destination);
+ * for (Flight flight : filteredFlights) {
+ * System.out.println(flight.getFlightNumber());
+ * }
+ * 
+ * System.out.println("\nFlights with business class alone:");
+ * List<Flight> businessOnlyFlights =
+ * ticketBookingSystem.filterBusinessClassFlights();
+ * if(businessOnlyFlights == null){
+ * System.out.println("No business class tickets");
+ * 
+ * }
+ * else {
+ * for (Flight flight : businessOnlyFlights) {
+ * System.out.println(flight.getFlightNumber());
+ * }
+ * }
+ * 
+ * 
+ * // Book seats for a flight
+ * /*List<Seat> seatsToBook =
+ * filteredFlights.get(0).getBusinessSeats().subList(0, 3);
+ * boolean mealOption = true;
+ * ticketBookingSystem.bookSeats(filteredFlights.get(0).getFlightNumber(),
+ * seatsToBook, mealOption);
+ */
+
+// Print available seats for a flight
+/*
+ */

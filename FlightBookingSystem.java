@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class FlightBookingSystem {
     private Map<String, Flight> flights;
     private Map<Integer, Booking> bookings;
@@ -22,12 +23,13 @@ public class FlightBookingSystem {
     public List<Flight> searchFlights(String source, String destination) {
         List<Flight> filteredFlights = new ArrayList<>();
         for (Flight flight : flights.values()) {
-            if (flight.getFlightNumber().toLowerCase().contains(source.toLowerCase()) &&
-                    flight.getFlightNumber().toLowerCase().contains(destination.toLowerCase())) {
+            if (flight.getFlightNumber().split("-")[2].toLowerCase().contains(source.toLowerCase()) &&
+                    flight.getFlightNumber().split("-")[3].toLowerCase().contains(destination.toLowerCase()))
+
+            {
                 filteredFlights.add(flight);
             }
 
-            
         }
         return filteredFlights;
     }
@@ -63,10 +65,14 @@ public class FlightBookingSystem {
 
         int totalCost = 0;
         if (seats.stream().anyMatch(s -> s.getSeatType().equals("Business"))) {
-            totalCost = seats.size() * (flight.getBusinessPrice() + (flight.getBusinessSeats().size() / 6) * flight.getBusinessPriceIncrease());
+            totalCost = seats.size() * (flight.getBusinessPrice()
+                    + (flight.getBusinessSeats().size() / 6) * flight.getBusinessPriceIncrease());
             flight.getBusinessSeats().removeAll(seats);
+            System.out.println("Successfully Booked!");
+            
         } else if (seats.stream().anyMatch(s -> s.getSeatType().equals("Economy"))) {
-            totalCost = seats.size() * (flight.getEconomyPrice() + (flight.getEconomySeats().size() / 6) * flight.getEconomyPriceIncrease());
+            totalCost = seats.size() * (flight.getEconomyPrice()
+                    + (flight.getEconomySeats().size() / 6) * flight.getEconomyPriceIncrease());
             flight.getEconomySeats().removeAll(seats);
         } else {
             System.out.println("Invalid seat type.");
@@ -118,8 +124,7 @@ public class FlightBookingSystem {
 
         int availableBusinessSeats = flight.getBusinessSeats().size();
         int availableEconomySeats = flight.getEconomySeats().size();
-
-        
+        System.out.println("\nAvailable seats for " + flightNumber + ":");
         System.out.println("Business Class: " + availableBusinessSeats);
         System.out.println("Economy Class: " + availableEconomySeats);
     }
@@ -160,7 +165,8 @@ public class FlightBookingSystem {
         System.out.println("Booking ID: " + booking.getBookingId());
         System.out.println("Passenger Details (with seat and Meal preference):");
         for (Seat seat : booking.getBookedSeats()) {
-            System.out.println("Seat: " + seat.getSeatNumber() + ", Type: " + seat.getSeatType() + ", Meal: " + (booking.hasMealOption() ? "Yes" : "No"));
+            System.out.println("Seat: " + seat.getSeatNumber() + ", Type: " + seat.getSeatType() + ", Meal: "
+                    + (booking.hasMealOption() ? "Yes" : "No"));
         }
 
         System.out.println("Flight Details (Flight no): " + flight.getFlightNumber());

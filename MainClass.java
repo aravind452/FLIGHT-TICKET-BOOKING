@@ -6,7 +6,7 @@ public class MainClass {
         TicketBookingSystem ticketBookingSystem = new TicketBookingSystem();
 
         // Read flight details from folder and add to the ticket booking system
-        File folder = new File("D:\\FLIGHT BOOKING SYSTEM\\FLIGHTS");
+        File folder = new File("D:\\FLIGHT TICKET BOOKING\\FLIGHTS");
         File[] files = folder.listFiles();
         for (File file : files) {
             try {

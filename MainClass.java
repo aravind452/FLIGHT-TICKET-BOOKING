@@ -12,6 +12,8 @@ public class MainClass {
             try {
                 BufferedReader reader = new BufferedReader(new FileReader(file));
                 String flightNumber = file.getName().replaceFirst("[.][^.]+$", "");
+
+                
                 //String source = flightNumber.split("-")[1];
                 //String destination = flightNumber.split("-")[2];
 

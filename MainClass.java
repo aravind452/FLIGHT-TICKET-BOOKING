@@ -58,6 +58,7 @@ public class MainClass {
 
         // Test the functions
         System.out.println("List of flights:");
+        System.out.println();
         List<String> flightDetails = flightBookingSystem.listFlightDetails();
         for (String flight : flightDetails) {
             System.out.println(flight);
@@ -69,9 +70,10 @@ public class MainClass {
         System.out.println("2. Available Tickets");
         System.out.println("3. Filter Flights With Business Class Alone");
         System.out.println("4. Cancellation");
-        System.out.println("5. Ticket Summary");
+        System.out.println("5. Seats Numbers For Which Meal Is Ordered");
         System.out.println("6. Full Summary");
-        System.out.println("Enter The Option");
+        System.out.println();
+        System.out.println("Enter The Any Number From The Above List");
 
         Scanner scanner = new Scanner(System.in);
         int enterValue = scanner.nextInt();
@@ -131,6 +133,22 @@ public class MainClass {
                 System.out.println("Enter your booking ID");
                 int bookingIdForCancellation = scanner.nextInt();
                 flightBookingSystem.cancelBooking(bookingIdForCancellation);
+                break;
+
+            case 5: // Seats Numbers For Which Meal Is Ordered
+
+                System.out.println("Enter Flight Number and Name");
+
+                String seatsForWhichMealHasBeenOrdered = scanner.next();
+                flightBookingSystem.printMealSeats(seatsForWhichMealHasBeenOrdered);
+                break;
+
+            case 6: // Individual And Flight Summary
+
+                System.out.println("Enter Your BookingId");
+                int bookingIdForSummary = scanner.nextInt();
+                flightBookingSystem.printIndividualAndFlightSummary(bookingIdForSummary);
+                break;
 
         }
         scanner.close();

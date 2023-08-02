@@ -8,5 +8,21 @@ Explanation of the "Flight Ticket Booking"
 2. PROGRAMMING LANGUAGE - JAVA
 3. JAVA DEVELOPMENT KIT
 
+# MODULES 
+
+1. System consits of Five Classes
+    - MainClass.java
+
+    - Flight.java
+
+    - Seat.java
+
+    - Booking.java
+
+
+    - FlightBookingSystem.java
+
+    
+
 
 

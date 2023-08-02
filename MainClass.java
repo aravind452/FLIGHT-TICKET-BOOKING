@@ -13,7 +13,6 @@ public class MainClass {
                 BufferedReader reader = new BufferedReader(new FileReader(file));
                 String flightNumber = file.getName().replaceFirst("[.][^.]+$", "");
 
-
                 int[] businessSeats = null;
                 int totalBusinessSeats = 0;
                 int[] economySeats = null;
@@ -74,13 +73,11 @@ public class MainClass {
         System.out.println("6. Full Summary");
         System.out.println("Enter The Option");
 
- 
         Scanner scanner = new Scanner(System.in);
         int enterValue = scanner.nextInt();
 
         switch (enterValue) {
-            case 1:
-                // Book seats for a flight
+            case 1: // Book Seats
 
                 System.out.println("Enter the source and destination");
                 String source = null;
@@ -91,9 +88,9 @@ public class MainClass {
                 System.out.println();
                 List<Flight> filteredFlights = flightBookingSystem.searchFlights(source, destination);
                 for (Flight flight : filteredFlights) {
-                    if(filteredFlights !=null)
-                    System.out.println(flight.getFlightNumber());
-                    else{
+                    if (filteredFlights != null)
+                        System.out.println(flight.getFlightNumber());
+                    else {
                         System.out.println("No Flights Found!");
                     }
                 }
@@ -104,21 +101,19 @@ public class MainClass {
                 flightBookingSystem.bookSeats(filteredFlights.get(0).getFlightNumber(), seatsToBook, mealOption);
                 break;
 
-            case 2:
-                // Print available seats for a flight
+            case 2: // Print Available Seats
+
                 System.out.println("Enter the source and destination");
 
                 source = scanner.next();
                 destination = scanner.next();
                 List<Flight> filtered_Flights = flightBookingSystem.searchFlights(source, destination);
-                
-                flightBookingSystem.printAvailableSeats(filtered_Flights.get(0).getFlightNumber());
 
-                
+                flightBookingSystem.printAvailableSeats(filtered_Flights.get(0).getFlightNumber());
 
                 break;
 
-            case 3:
+            case 3: // Business Class Alone
 
                 System.out.println("\nFlights with business class alone:");
                 List<Flight> businessOnlyFlights = flightBookingSystem.filterBusinessClassFlights();
@@ -130,6 +125,12 @@ public class MainClass {
                     }
                 }
                 break;
+
+            case 4: // Cancellation
+
+                System.out.println("Enter your booking ID");
+                int bookingIdForCancellation = scanner.nextInt();
+                flightBookingSystem.cancelBooking(bookingIdForCancellation);
 
         }
         scanner.close();

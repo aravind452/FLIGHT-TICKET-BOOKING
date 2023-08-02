@@ -41,7 +41,7 @@ Explanation of the "Flight Ticket Booking"
 
 - <a href="https://github.com/aravind452/FLIGHT-TICKET-BOOKING/blob/main/Flight.java"> Flight.java </a> - This class describes about the seating arrangements for Business and Economy seats in the Flight.
 
-- <a href="https://github.com/aravind452/FLIGHT-TICKET-BOOKING/blob/main/FlightBookingSystem.java"> FlightBookingSystem.java </a> - All the logic of the system has been specified in this class.
+- <a href="https://github.com/aravind452/FLIGHT-TICKET-BOOKING/blob/main/FlightBookingSystem.java"> FlightBookingSystem.java </a> - All the logics of the system has been specified in this class.
 
 
 

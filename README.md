@@ -26,7 +26,3 @@ Explanation of the "Flight Ticket Booking"
 - Cancellation Tickets
 - Summary Of Tickets
 
-<h3> Explanation </h3>
-
-- MainClass.java
-<p> This class is mainly used to get user inputs and based on the input, the concerned action is performed </p>

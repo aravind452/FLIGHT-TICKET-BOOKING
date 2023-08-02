@@ -19,6 +19,8 @@ Explanation of the "Flight Ticket Booking"
 
 <h3>Operations that can be performed by this system</h3>
 
+- List Down Flights
+- Search For Flights
 - Book Tickets
 - Cancel Tickets
 - Summary Of Tickets

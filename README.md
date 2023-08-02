@@ -8,8 +8,8 @@ Explanation of the "Flight Ticket Booking"
 2. PROGRAMMING LANGUAGE - JAVA
 3. JAVA DEVELOPMENT KIT
 
-<h3> MODULES </h3>
-<h1>System consists of Five Classes</h1>
+<h2> MODULES </h2>
+<h3>System consists of Five Classes</h3>
 
 - <a href="https://github.com/aravind452/FLIGHT-TICKET-BOOKING/blob/main/MainClass.java"> MainClass.java </a>
 - <a href="https://github.com/aravind452/FLIGHT-TICKET-BOOKING/blob/main/Booking.java"> Booking.java </a>

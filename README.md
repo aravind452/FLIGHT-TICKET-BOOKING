@@ -26,4 +26,14 @@ Explanation of the "Flight Ticket Booking"
 - Cancellation Of Tickets
 - Summary Of Tickets
 
+<h3> STEPS </h3>
+
+- Flight-A112-Chennai-Mumbai
+- Flight-A113-Chennai-Kolkata
+-	Flight-A114-Chennai-Delhi ... etc.,
+- A folder contains all the file details with the above file names which will be considered as input to your program.
+
+
+
+
 

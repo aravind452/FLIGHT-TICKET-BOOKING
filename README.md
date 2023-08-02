@@ -10,7 +10,7 @@ Explanation of the "Flight Ticket Booking"
 
 # MODULES 
 
-1. System consits of Five Classes
+1. System consists of Five Classes
     - MainClass.java
 
     - Flight.java
@@ -22,7 +22,7 @@ Explanation of the "Flight Ticket Booking"
 
     - FlightBookingSystem.java
 
-    
+
 
 
 

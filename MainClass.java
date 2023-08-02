@@ -156,39 +156,5 @@ public class MainClass {
     }
 }
 
-/*
- * String source = "Chennai";
- * String destination = "Mumbai";
- * System.out.println("\nFiltered flights from " + source + " to " + destination
- * + ":");
- * List<Flight> filteredFlights = ticketBookingSystem.searchFlights(source,
- * destination);
- * for (Flight flight : filteredFlights) {
- * System.out.println(flight.getFlightNumber());
- * }
- * 
- * System.out.println("\nFlights with business class alone:");
- * List<Flight> businessOnlyFlights =
- * ticketBookingSystem.filterBusinessClassFlights();
- * if(businessOnlyFlights == null){
- * System.out.println("No business class tickets");
- * 
- * }
- * else {
- * for (Flight flight : businessOnlyFlights) {
- * System.out.println(flight.getFlightNumber());
- * }
- * }
- * 
- * 
- * // Book seats for a flight
- * /*List<Seat> seatsToBook =
- * filteredFlights.get(0).getBusinessSeats().subList(0, 3);
- * boolean mealOption = true;
- * ticketBookingSystem.bookSeats(filteredFlights.get(0).getFlightNumber(),
- * seatsToBook, mealOption);
- */
 
-// Print available seats for a flight
-/*
- */
+ 

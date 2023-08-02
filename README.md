@@ -12,7 +12,7 @@ Explanation of the "Flight Ticket Booking"
 
 <h1>System consists of Five Classes</h1>
 
-<a href="https://github.com/aravind452/FLIGHT-TICKET-BOOKING/blob/main/MainClass.java"> MainClass.java</a>
+- <a href="https://github.com/aravind452/FLIGHT-TICKET-BOOKING/blob/main/MainClass.java"> MainClass.java </a>
 
 
 

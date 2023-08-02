@@ -73,7 +73,7 @@ public class MainClass {
         System.out.println("5. Seats Numbers For Which Meal Is Ordered");
         System.out.println("6. Full Summary");
         System.out.println();
-        System.out.println("Enter The Any Number From The Above List");
+        System.out.println("Enter Any Number From The Above List");
 
         Scanner scanner = new Scanner(System.in);
         int enterValue = scanner.nextInt();

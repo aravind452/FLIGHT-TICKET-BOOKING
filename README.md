@@ -17,6 +17,12 @@ Explanation of the "Flight Ticket Booking"
 - <a href="https://github.com/aravind452/FLIGHT-TICKET-BOOKING/blob/main/Seat.java"> Seat.java </a>
 - <a href="https://github.com/aravind452/FLIGHT-TICKET-BOOKING/blob/main/FlightBookingSystem.java"> FlightBookingSystem.java </a>
 
+<h3>Operations that can be performed by this system</h3>
+- Book Tickets
+- Cancel Tickets
+- Summary Of Tickets
+- Filter Flights
+
 
 
 

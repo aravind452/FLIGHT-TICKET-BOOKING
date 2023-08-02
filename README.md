@@ -20,15 +20,8 @@ Explanation of the "Flight Ticket Booking"
 <h3>Operations that can be performed by this system</h3>
 
 - List Down Flights
-- Search For Flights
-- Book Tickets
-- Cancel Tickets
+- Search For Flights / Filter Flights
+- Book Tickets (Along With Food/Meal)
+- List Available Seats In The Flight
+- Cancellation Tickets
 - Summary Of Tickets
-- Filter Flights
-
-
-
-
-
-
-

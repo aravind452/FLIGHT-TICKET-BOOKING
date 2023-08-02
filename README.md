@@ -33,6 +33,10 @@ Explanation of the "Flight Ticket Booking"
 -	Flight-A114-Chennai-Delhi ... etc.,
 - A folder contains all the file details with the above file names which will be considered as input to your program.
 
+- <a href="https://github.com/aravind452/FLIGHT-TICKET-BOOKING/blob/main/MainClass.java"> MainClass.java </a> this class segragate the seats in the flights between Busines or Economy class (As Specified In The Requirements) and additionally it handles user inputs to perform the necessary function.
+
+
+
 
 
 
